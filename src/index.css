@@ -1,5 +1,5 @@
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -20,6 +20,26 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+}
+
+.btn {
+  padding: 0.25em 0.5em;
+  border-radius: 0.25em;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.list {
+  text-decoration: none;
+  list-style: none;
+  margin-left: 1rem;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
 }
 
 /* 

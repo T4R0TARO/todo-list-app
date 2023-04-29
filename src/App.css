@@ -12,6 +12,22 @@
   text-align: center;
 }
 
+.btn.btn-delete {
+  color: red;
+  border: 2px solid red;
+}
+
+.btn.btn-delete:hover,
+.btn.btn-delete:focus-visible {
+  background: maroon;
+}
+
+.new-item-form input {
+  outline: none;
+  border: none;
+  border-radius: 0.25em;
+  padding: 0.25em 0.5em;
+}
 /* .logo {
   height: 6em;
   padding: 1.5em;
