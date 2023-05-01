@@ -12,7 +12,7 @@ function App() {
           <label htmlFor="item">New Item</label>
           <input id="item" type="text" />
         </div>
-        <button className="btn">Add</button>
+        <button className="add-btn">Add</button>
       </form>
       <h1 className="header">Todo List</h1>
       <ul className="list">
