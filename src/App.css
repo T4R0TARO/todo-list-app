@@ -90,4 +90,9 @@ input {
   gap: 0.25rem;
   cursor: pointer;
   align-items: center;
+  color: green;
+}
+
+.list li:has(input:checked) label {
+  color: green;
 }

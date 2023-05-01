@@ -34,6 +34,7 @@ function App() {
     setNewItem("");
   }
 
+  // toggles checked props for todo items
   function toggleTodo(id, completed) {
     setTodos((prevState) => {
       return prevState.map((todo) => {
@@ -45,10 +46,16 @@ function App() {
     });
   }
 
+  // Generate JSX and display todo items
   const todoListItems = todos.map((todo) => {
+    // if item is checked, font turns green
+    const styles = {
+      color: todo.completed ? "green" : "white",
+    };
+
     return (
       <li key={todo.id}>
-        <label>
+        <label style={styles}>
           <input
             type="checkbox"
             checked={todo.completed}
