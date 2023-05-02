@@ -8,11 +8,11 @@ function App() {
   console.log(newItem);
   console.log(todos);
   /** MVP
-   * Input Form for user to add info about the item
-   * Add button to add Item from form
-   * List That displays all added items
+   * Input Form for user to add info about the item ✅
+   * Add button to add Item from form ✅
+   * List That displays all added items ✅
    * Delete button to delete item
-   * Click to mark item as complete
+   * Click to mark item as complete ✅
    */
 
   // Keeps track of changes in the form input
@@ -53,6 +53,12 @@ function App() {
       color: todo.completed ? "green" : "white",
     };
 
+    function deleteTodo(id) {
+      setTodos((prevState) => {
+        return prevState.filter((todo) => todo.id !== id);
+      });
+    }
+
     return (
       <li key={todo.id}>
         <label style={styles}>
@@ -63,7 +69,9 @@ function App() {
           />
           {todo.title}
         </label>
-        <button className="btn btn-delete">Delete</button>
+        <button onClick={() => deleteTodo(todo.id)} className="btn btn-delete">
+          Delete
+        </button>
       </li>
     );
   });
@@ -86,7 +94,10 @@ function App() {
       </form>
       <h1 className="header">Todo List</h1>
       {/* Todo List Items */}
-      <ul className="list">{todoListItems}</ul>
+      <ul className="list">
+        {todos.length === 0 && "No Todos"}
+        {todoListItems}
+      </ul>
     </main>
   );
 }
