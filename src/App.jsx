@@ -1,38 +1,33 @@
 import { useState } from "react";
 import { nanoid } from "nanoid";
+import NewTodoForm from "./components/NewTodoForm";
+
 import "./App.css";
 
 function App() {
-  const [newItem, setNewItem] = useState("");
+  // const [newItem, setNewItem] = useState("");
   const [todos, setTodos] = useState([]);
-  console.log(newItem);
-  console.log(todos);
-  /** MVP
-   * Input Form for user to add info about the item ✅
-   * Add button to add Item from form ✅
-   * List That displays all added items ✅
-   * Delete button to delete item
-   * Click to mark item as complete ✅
-   */
+
+  function addTodo(title) {
+    setTodos((prevState) => {
+      return [...prevState, { id: nanoid(), title, completed: false }];
+    });
+  }
 
   // Keeps track of changes in the form input
-  function handleChange(e) {
-    setNewItem(e.target.value);
-  }
+  // function handleChange(e) {
+  //   setNewItem(e.target.value);
+  // }
 
-  // * prevent default re-render
-  // add item obj to state `todos`
-  // each item has props `id` `title` `completed`
-  // clear input back to blank string
-  function handleSubmit(e) {
-    e.preventDefault();
+  // function handleSubmit(e) {
+  //   e.preventDefault();
 
-    setTodos((prevState) => {
-      return [...prevState, { id: nanoid(), title: newItem, completed: false }];
-    });
+  //   setTodos((prevState) => {
+  //     return [...prevState, { id: nanoid(), title: newItem, completed: false }];
+  //   });
 
-    setNewItem("");
-  }
+  //   setNewItem("");
+  // }
 
   // toggles checked props for todo items
   function toggleTodo(id, completed) {
@@ -53,6 +48,7 @@ function App() {
       color: todo.completed ? "green" : "white",
     };
 
+    // Delete Item
     function deleteTodo(id) {
       setTodos((prevState) => {
         return prevState.filter((todo) => todo.id !== id);
@@ -80,18 +76,7 @@ function App() {
     <main>
       <h1>TODO LIST APP</h1>
       {/* New Item Form */}
-      <form onSubmit={handleSubmit} className="new-item-form">
-        <div className="form-row">
-          <label htmlFor="item">New Item</label>
-          <input
-            value={newItem}
-            onChange={handleChange}
-            id="item"
-            type="text"
-          />
-        </div>
-        <button className="add-btn">Add</button>
-      </form>
+      <NewTodoForm addTodo={addTodo} />
       <h1 className="header">Todo List</h1>
       {/* Todo List Items */}
       <ul className="list">
