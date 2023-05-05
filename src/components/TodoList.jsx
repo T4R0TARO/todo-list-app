@@ -2,7 +2,6 @@ import React from "react";
 import TodoItem from "./TodoItem";
 
 export default function TodoList({ todos, toggleTodo, deleteTodo }) {
-  console.log(todos);
   return (
     <ul className="list">
       {todos.length === 0 && "No Todos"}

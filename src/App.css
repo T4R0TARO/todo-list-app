@@ -14,7 +14,7 @@
 
 .new-item-form {
   margin-bottom: 5rem;
-  border: 1px solid plum;
+  /* border: 1px solid plum; */
 }
 
 .btn.btn-delete {
@@ -76,23 +76,10 @@ input {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  border: 1px solid red;
 }
 
 .list li {
   display: flex;
   gap: 0.5rem;
   align-items: center;
-}
-
-.list li label {
-  display: flex;
-  gap: 0.25rem;
-  cursor: pointer;
-  align-items: center;
-  color: green;
-}
-
-.list li:has(input:checked) label {
-  color: green;
 }

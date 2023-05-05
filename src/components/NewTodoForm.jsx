@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-export default function NewTodoForm(props) {
+export default function NewTodoForm({ addTodo }) {
   const [newItem, setNewItem] = useState("");
 
   function handleChange(e) {
@@ -12,7 +12,7 @@ export default function NewTodoForm(props) {
     e.preventDefault();
 
     if (newItem === "") return;
-    props.addTodo(newItem);
+    addTodo(newItem);
 
     setNewItem("");
   }
