@@ -8,7 +8,6 @@ At first I wrote all the logic in the App component. I created a variable `todoL
 
 ```jsx
 const todoListItems = todos.map((todo) => {
-  // if item is checked, font turns green
   const styles = {
     color: todo.completed ? "green" : "white",
   };
@@ -33,7 +32,7 @@ const todoListItems = todos.map((todo) => {
 
 ### Refactored in seperate components
 
-Moved the `<ul className="list"></ul>` into seperate component.
+Moved the `<ul className="list"></ul>` into seperate component. But now `TodoList()` no longer has access to state `todo` or the functions `toggleTodo` and `deleteTodo`. To Fix this `TodoList` component will have props to access the state and the functions.
 
 ```jsx
 // TodoList.jsx

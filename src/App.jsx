@@ -42,32 +42,6 @@ function App() {
     });
   }
 
-  // ! Generate JSX and display todo items DO NOT USE
-  // ! Code has been refactored and broken up into smaller components
-  // ! Check TodoList.jsx and TodoItem.jsx
-  // const todoListItems = todos.map((todo) => {
-  //   // if item is checked, font turns green
-  //   const styles = {
-  //     color: todo.completed ? "green" : "white",
-  //   };
-
-  //   return (
-  //     <li key={todo.id}>
-  //       <label style={styles}>
-  //         <input
-  //           type="checkbox"
-  //           checked={todo.completed}
-  //           onChange={(e) => toggleTodo(todo.id, e.target.checked)}
-  //         />
-  //         {todo.title}
-  //       </label>
-  //       <button onClick={() => deleteTodo(todo.id)} className="btn btn-delete">
-  //         Delete
-  //       </button>
-  //     </li>
-  //   );
-  // });
-
   return (
     <main>
       <h1>TODO LIST APP</h1>

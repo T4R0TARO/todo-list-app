@@ -17,10 +17,8 @@
 body {
   margin: 0 auto;
   display: flex;
-  /* place-items: center; */
   min-width: 400px;
   min-height: 100vh;
-  border: 1px solid yellow;
 }
 
 .btn {
