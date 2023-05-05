@@ -34,6 +34,17 @@ const todoListItems = todos.map((todo) => {
 
 Moved the `<ul className="list"></ul>` into seperate component. But now `TodoList()` no longer has access to state `todo` or the functions `toggleTodo` and `deleteTodo`. To Fix this `TodoList` component will have props to access the state and the functions.
 
+- `todos`: an array of todo objects
+- `toggleTodo`: a function to toggle the completed status of a todo
+- `deleteTodo`: a function to delete a todo
+
+1. The `TodoList` component renders a unorder list `<ul>` with the class name `list`.
+2. For each todo in the `todos` array, the `TodoList` component maps over the array and renders a `TodoItem` component.
+3. The spread operator `...todo` is used to pass all the properties of the `todo` object as props to the `TodoItem` component.
+4. The `key` prop is also passed to each `TodoItem` which is required when rendering lists in React.
+5. `toggleTodo` and `deleteTodo` functions are passed as props to each `TodoItem` component
+6. `TodoItem` component is imported from seperate file
+
 ```jsx
 // TodoList.jsx
 import TodoItem from "./TodoItem";
@@ -58,7 +69,17 @@ export default function TodoList({ todos, toggleTodo, deleteTodo }) {
 }
 ```
 
-Moved the `<li key={id}></li>` to a seperate component.
+Moved the `<li key={id}></li>` to a seperate component. `TodoItem` component recieves props:
+
+- `completed`: boolean indicating whether the todo item is completed
+- `id`: unique identifier for the todo item
+- `title`: a string containing the title of the todo item.
+- `toggleTodo`: a function that will be called when the checkbox input is clicked. It take two arg: `id` of the todo item and the new `checked` value of the checkbox
+- `deleteTodo`: is a function that will be called when the Delete button is clicked. It takes one arg `id` of the todo item.
+
+1. The `TodoItem` component renders a list item `<li>` with the `id` as the `key` prop.
+2. Insisde the list item, it renders the same html structure as before but refactored the props so we can access them
+3. With destructing I can access the `TodoItem` components props directly into the JSX without access the `todo`
 
 ```jsx
 // TodoItem.jsx
