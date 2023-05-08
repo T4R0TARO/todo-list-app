@@ -2,6 +2,9 @@
 
 Remade old vanilla JS project in React. Todo app can create a list item, delete a list item, check an item when completed, and items can be saved in localStorage.
 
+### Screenshots
+![image](https://user-images.githubusercontent.com/76195521/236950424-8901fb62-6e44-4b09-8855-7c548811fb14.png)
+
 ### Original Code
 
 At first I wrote all the logic in the App component. I created a variable `todoListItems` that access state `todos` and iterate through the items in state to create `<li></li>` for the items in state. Then displayed the result in the jsx. `todoListItems` had access to all the function in `App` like `toggleTodo()` and `deleteTodo` but after moving it to seprate components I had some refactoring to do...
